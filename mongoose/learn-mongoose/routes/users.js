@@ -3,7 +3,7 @@ var User = require('../schemas/user');
 
 var router = express.Router();
 
-/* GET users listing. */
+/* GET users listing.
 router.get('/', function(req, res, next) {
   User.find({})
     .then((users) => {
@@ -14,7 +14,20 @@ router.get('/', function(req, res, next) {
       next(err);
     });
 });
+*/
 
+router.get('/', async(req, res, next) => {
+  try{
+    const users = await User.find();
+    res.json(users);
+  }catch(error){
+    console.error(error);
+    next(error);
+  }
+});
+
+
+/*
 router.post('/', function(req, res, next) {
   const user = new User({
     name: req.body.name,
@@ -30,6 +43,23 @@ router.post('/', function(req, res, next) {
       console.error(err);
       next(err);
     });
+});
+*/
+
+router.post('/', async(req, res, next) => {
+  const user = new User({
+    name: req.body.name,
+    age: req.body.age,
+    married: req.body.married,
+  });
+  try{
+    const result = await user.save();
+    console.log(result);
+    res.status(201).json(result);
+  }catch(error){
+    console.error(error);
+    next(error);
+  }
 });
 
 module.exports = router;

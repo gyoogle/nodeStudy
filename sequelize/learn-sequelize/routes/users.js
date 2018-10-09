@@ -3,7 +3,7 @@ var User = require('../models').User;
 
 var router = express.Router();
 
-/* GET users listing. */
+/*
 router.get('/', function(req, res, next) {
   User.findAll()
     .then((users) => {
@@ -14,8 +14,9 @@ router.get('/', function(req, res, next) {
       next(err);
     });
 });
+*/
 
-/* async,await
+// async,await
 router.get('/', async(req, res, next) => {
   try {
     const users = await User.findAll();
@@ -25,8 +26,8 @@ router.get('/', async(req, res, next) => {
     next(error);
   }
 });
-*/
 
+/*
 router.post('/', function(req, res, next) {
   User.create({
     name: req.body.name,
@@ -41,6 +42,22 @@ router.post('/', function(req, res, next) {
       console.error(err);
       next(err);
     });
+});
+*/
+
+router.post('/', async(req, res, next) => {
+  try{
+    const result = await User.create({
+      name: req.body.name,
+      age: req.body.age,
+      married: req.body.married,
+    });
+    console.log(result);
+    res.status(201).json(result);
+  }catch(error){
+    console.error(error);
+    next(error);
+  };
 });
 
 module.exports = router;
