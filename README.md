@@ -79,12 +79,37 @@ Node.js를 학습하며 기록한 코드 및 이슈 정리
  
 
 - ##### 익스프레스로 SNS 서비스 만들기
+
+> - 이슈
+>
+>   1. 폴더 내의 index.js 파일은 require 시 이름 생략 가능
+>      `require('./passport') == require('./passport/index.js')`
+>
+>   2. req.session 객체는 express-session에서 생성하는 것이므로 passport 미들웨어는 express-session 미들웨어보다 뒤에 연결해야 함
+>
+>   3. bcrypt 설치 오류 : 낮은 버전으로 설치해준다.
+>      `npm i bcrypt@3.0.0`
+>   4. serializeUser : 사용자 정보 객체를 세션에 아이디로 저장하는 것
+>      deserializeUser : 세션에 저장한 아이디를 통해 사용자 정보 객체를 불러오는 것
+>      **이렇게 하는 이유는? -> 세션에 불필요한 정보를 저장하지 않기 위해**
+>   5. 미들웨어 내의 미들웨어에는 끝에 (req, res, next)를 붙인다.
+>   6. LocalStrategy의 async 함수 중 세번째 인자인 done 함수는 passport.authenticate의 콜백 함수
+>   7. 카카오톡 웹 플랫폼 사이트 도메인은 kakaoStrategy.js의 callbackURL과 일치해야 한다.
+>
+>
+
 - ##### 웹 API 서버 만들기
+
 - ##### 웹 소켓으로 실시간 데이터 전송하기
+
 - ##### 실시간 경매 시스템 만들기
+
 - ##### 구글 API로 장소 검색 서비스 만들기
+
 - ##### CLI 프로그램 만들기
+
 - ##### AWS와 GCP로 배포하기
+
 - ##### 서버리스 노드 개발하기
 
 
