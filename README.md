@@ -84,9 +84,7 @@ Node.js를 학습하며 기록한 코드 및 이슈 정리
 >
 >   1. 폴더 내의 index.js 파일은 require 시 이름 생략 가능
 >      `require('./passport') == require('./passport/index.js')`
->
 >   2. req.session 객체는 express-session에서 생성하는 것이므로 passport 미들웨어는 express-session 미들웨어보다 뒤에 연결해야 함
->
 >   3. bcrypt 설치 오류 : 낮은 버전으로 설치해준다.
 >      `npm i bcrypt@3.0.0`
 >   4. serializeUser : 사용자 정보 객체를 세션에 아이디로 저장하는 것
@@ -95,8 +93,11 @@ Node.js를 학습하며 기록한 코드 및 이슈 정리
 >   5. 미들웨어 내의 미들웨어에는 끝에 (req, res, next)를 붙인다.
 >   6. LocalStrategy의 async 함수 중 세번째 인자인 done 함수는 passport.authenticate의 콜백 함수
 >   7. 카카오톡 웹 플랫폼 사이트 도메인은 kakaoStrategy.js의 callbackURL과 일치해야 한다.
+>   8. dotenv 패키지와 .env 파일로 유출되면 안되는 비밀키 관리하기
+>   9. 라우터 - routes 폴더 / 데이터베이스 - models 폴더 / pug 파일 - views 폴더에 구분하여 저장하기. 이는 프로젝트 규모가 커져도 관리 용이
+>   10. 데이터베이스는 1:1 / 1:N / N:M 관계를 잘 파악해서 만들자
 >
->
+> 코드 : https://github.com/kim6394/nodeStudy/tree/master/nodeSNS
 
 - ##### 웹 API 서버 만들기
 
