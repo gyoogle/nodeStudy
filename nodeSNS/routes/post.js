@@ -7,6 +7,7 @@ const { Post, Hashtag, User } = require('../models');
 const { isLoggedIn } = require('./middlewares');
 
 const router = express.Router();
+
 fs.readdir('uploads', (error) => {
     if(error) {
         console.error('uploads 폴더가 없어 uploads 폴더를 생성합니다.');
