@@ -100,6 +100,7 @@ Node.js를 학습하며 기록한 코드 및 이슈 정리
 >   10. 데이터베이스는 1:1 / 1:N / N:M 관계를 잘 파악해서 만들자
 >
 > 코드 : https://github.com/kim6394/nodeStudy/tree/master/nodeSNS
+>
 > 정리 : [링크](https://github.com/kim6394/nodeStudy/blob/master/SNS%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.md)
 
 - ##### 웹 API 서버 만들기
