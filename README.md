@@ -102,6 +102,8 @@ Node.js를 학습하며 기록한 코드 및 이슈 정리
 > 코드 : https://github.com/kim6394/nodeStudy/tree/master/nodeSNS
 >
 > 정리 : [링크](https://github.com/kim6394/nodeStudy/blob/master/SNS%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8.md)
+>
+> 추가기능 구현 : 팔로우 끊기, 게시물 삭제, 좋아요 기능, 닉네임 
 
 - ##### 웹 API 서버 만들기
 
